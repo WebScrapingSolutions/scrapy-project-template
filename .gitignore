@@ -1,0 +1,11 @@
+/venv
+/.idea
+/.gitignore
+/.scrapy/httpcache/beauty_category/
+/build/lib/ecommerce/
+/project.egg-info/
+*.json
+/.scrapy/
+**/__pycache__/
+/build/
+/.ruff_cache/
