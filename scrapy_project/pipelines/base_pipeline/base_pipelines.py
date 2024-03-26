@@ -28,7 +28,7 @@ class BaseDBPipeline:
 
     def process_item(self, item, spider):
         item_for_db = self.prepare_item(
-            copy.deepcopy(item), job_run_url=spider.job_run_url
+            copy.deepcopy(item)
         )
         item_for_db.pop("parent_url", None)
 
@@ -57,5 +57,5 @@ class BaseDBPipeline:
     def insert_to_db(self, items):
         pass
 
-    def prepare_item(self, item, job_run_url):
+    def prepare_item(self, item):
         return item
