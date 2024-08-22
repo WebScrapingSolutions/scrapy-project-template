@@ -14,4 +14,5 @@ if __name__ == "__main__":
     json_urls = [json.dumps({"url": model.url}) for model in rows_to_insert]
     # insert to redis queue
     with redis.from_url(url=REDIS_URL) as redis_connect:
+        redis_connect.delete("redis-product-spider:start_urls")
         redis_connect.lpush("redis-product-spider:start_urls", *json_urls)
