@@ -27,7 +27,7 @@ CONCURRENT_REQUESTS = 3
 # See also autothrottle settings and docs
 DOWNLOAD_DELAY = 0
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 1
+# CONCURRENT_REQUESTS_PER_DOMAIN = 1
 # CONCURRENT_REQUESTS_PER_IP = 1
 
 # Disable cookies (enabled by default)
@@ -81,9 +81,9 @@ DOWNLOAD_TIMEOUT = 120
 # Enable and configure HTTP caching (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
 HTTPCACHE_ENABLED = False
-HTTPCACHE_EXPIRATION_SECS = 100 * 86400
+HTTPCACHE_EXPIRATION_SECS = 0
 HTTPCACHE_DIR = "httpcache"
-HTTPCACHE_IGNORE_HTTP_CODES = []
+HTTPCACHE_IGNORE_HTTP_CODES = [429, 500, 503, 504, 400, 403, 404, 408]
 HTTPCACHE_STORAGE = "scrapy.extensions.httpcache.FilesystemCacheStorage"
 
 from .scrapy_poet_overrides import _SCRAPY_POET_OVERRIDES
